@@ -1,0 +1,107 @@
+body {
+    /* remover espaço donavegador  */
+    margin: 0;
+    /* rremoveer o pdiametro padrao */
+    padding: 0;
+    /* define a fonte base no site */
+    font-family: Arial, Helvetica, sans-serif;
+    /* cor de fundo clara para o layout */
+    background: azure;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 70px 1fr 50px;
+    grid-template-areas: 
+    "header header"
+    "sidebar content"
+    "sidebar footer";
+    height:100vh;
+}
+.logo{
+    width: 100px;
+    border-radius: 50%;
+    align-items: center;
+}
+.header{
+    grid-area: header; 
+    /* conecta o header a area "header" do grid defnido em . layout */
+    position: fixed;
+    /* mantei o cabeçalho fixo no tela */
+    top: 0; left: 0; right: 0;
+    /* fixa o heaer em todos as bordsa superiores */
+    height: 50px;
+    /* altura fixa para o cabeçalho */
+    background:rgb(80, 15, 145);
+    /* definr cor de fundo ao cabeçalhor */
+    color: #fff;
+    /*  */
+    padding: 10px 30px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.sidebar {
+    align-items: center;
+    grid-area: sidebar; /* Conecta à área "sidebar" do grid */
+    position: fixed;    /* Fica fixa na lateral */
+    width: 250px;       /* Largura fixa (mesmo valor da coluna no grid) */
+    
+    /* Posicionamento: Inicia abaixo do header (70px) e vai até o rodapé */
+    top: 70px; 
+    left: 0; 
+    bottom: 0; 
+    
+    /* Estilos visuais básicos */
+    background:rebeccapurple;
+    padding: 20px;
+    z-index: 1; /* Fica acima do conteúdo, mas abaixo do header */
+    
+    /* Para alinhar o perfil no topo e o rodapé da sidebar embaixo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    grid-area: content; /* Conecta à área "content" do grid */
+    /* Margens para espaçar do header e sidebar */
+    /* (Note: o padding-top do layout é 70px por causa do header) */
+    margin: 5px 20px 30px 30px;
+    padding: 20px;
+    /* Altura mínima para garantir que o conteúdo preencha a tela, 
+       descontando o header (70px) e o footer (50px) */
+    min-height: calc(100vh - 120px); 
+    /* Adiciona rolagem vertical SÓ no conteúdo, se necessário */
+    overflow-y: auto; 
+}
+
+.footer {
+    grid-area: footer; /* Conecta à área "footer" do grid */
+    /* Estilos visuais básicos */
+    background: rgb(86, 27, 145);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.avatar{
+    width: 100px;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.comentar{
+    width: 15px
+}
+.curtir{
+    width: 17px
+}
+
+.Instagram{
+    width: 17px
+}
